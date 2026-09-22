@@ -15,5 +15,25 @@
     <string name="font_pirata_label">Pirata One</string>
     <string name="font_cinzeldec_label">Cinzel (roman caps)</string>
     <string name="font_unifraktur_label">Unifraktur (blackletter)</string>
+    <string name="font_lobster_label">Lobster (fun script)</string>
+    <string name="font_gochihand_label">Gochi Hand (fun handwritten)</string>
+    <string name="font_caveatbrush_label">Caveat Brush (fun brush)</string>
+    <string name="font_greatvibes_label">Great Vibes (fun script)</string>
+    <string name="font_shadows_label">Shadows Into Light (fun handwritten)</string>
+    <string name="font_bungee_label">Bungee (fun chunky)</string>
+    <string name="font_alfaslabone_label">Alfa Slab (fun chunky)</string>
+    <string name="font_bowlbyone_label">Bowlby One (fun chunky)</string>
+    <string name="font_chicle_label">Chicle (fun rounded)</string>
+    <string name="font_rye_label">Rye (fun western)</string>
+    <string name="font_fascinate_label">Fascinate (fun deco)</string>
+    <string name="font_fascinateinline_label">Fascinate Inline (fun deco)</string>
+    <string name="font_monoton_label">Monoton (fun deco)</string>
+    <string name="font_ewert_label">Ewert (fun woodtype)</string>
+    <string name="font_audiowide_label">Audiowide (fun techy)</string>
+    <string name="font_spacemono_label">Space Mono (fun mono)</string>
+    <string name="font_courierprime_label">Courier Prime (fun typewriter)</string>
+    <string name="font_vt323_label">VT323 (fun pixel)</string>
+    <string name="font_creepster_label">Creepster (fun spooky)</string>
+    <string name="font_ribeyemarrow_label">Ribeye Marrow (fun quirky)</string>
     <string name="seconds_dot_label">Seconds dot</string>
 </resources>

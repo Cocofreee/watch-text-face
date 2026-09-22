@@ -25,6 +25,26 @@
       <ListOption id="7" displayName="font_pirata_label" />
       <ListOption id="8" displayName="font_cinzeldec_label" />
       <ListOption id="9" displayName="font_unifraktur_label" />
+      <ListOption id="10" displayName="font_lobster_label" />
+      <ListOption id="11" displayName="font_gochihand_label" />
+      <ListOption id="12" displayName="font_caveatbrush_label" />
+      <ListOption id="13" displayName="font_greatvibes_label" />
+      <ListOption id="14" displayName="font_shadows_label" />
+      <ListOption id="15" displayName="font_bungee_label" />
+      <ListOption id="16" displayName="font_alfaslabone_label" />
+      <ListOption id="17" displayName="font_bowlbyone_label" />
+      <ListOption id="18" displayName="font_chicle_label" />
+      <ListOption id="19" displayName="font_rye_label" />
+      <ListOption id="20" displayName="font_fascinate_label" />
+      <ListOption id="21" displayName="font_fascinateinline_label" />
+      <ListOption id="22" displayName="font_monoton_label" />
+      <ListOption id="23" displayName="font_ewert_label" />
+      <ListOption id="24" displayName="font_audiowide_label" />
+      <ListOption id="25" displayName="font_spacemono_label" />
+      <ListOption id="26" displayName="font_courierprime_label" />
+      <ListOption id="27" displayName="font_vt323_label" />
+      <ListOption id="28" displayName="font_creepster_label" />
+      <ListOption id="29" displayName="font_ribeyemarrow_label" />
     </ListConfiguration>
     <BooleanConfiguration id="seconds_dot"
         displayName="seconds_dot_label"
@@ -597,6 +617,1086 @@
       <Variant mode="AMBIENT" target="alpha" value="255" />
       <Text align="CENTER">
         <Font family="unifraktur" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="10">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="lobster" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="lobster" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="lobster" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="lobster" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="lobster" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="lobster" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="11">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="gochihand" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="gochihand" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="gochihand" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="gochihand" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="gochihand" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="gochihand" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="12">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="caveatbrush" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="caveatbrush" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="caveatbrush" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="caveatbrush" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="caveatbrush" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="caveatbrush" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="13">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="greatvibes" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="greatvibes" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="greatvibes" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="greatvibes" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="greatvibes" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="greatvibes" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="14">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="shadows" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="shadows" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="shadows" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="shadows" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="shadows" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="shadows" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="15">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="bungee" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="bungee" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="bungee" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="bungee" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="bungee" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="bungee" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="16">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="alfaslabone" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="alfaslabone" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="alfaslabone" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="alfaslabone" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="alfaslabone" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="alfaslabone" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="17">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="bowlbyone" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="bowlbyone" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="bowlbyone" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="bowlbyone" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="bowlbyone" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="bowlbyone" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="18">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="chicle" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="chicle" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="chicle" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="chicle" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="chicle" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="chicle" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="19">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="rye" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="rye" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="rye" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="rye" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="rye" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="rye" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="20">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="fascinate" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="fascinate" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="fascinate" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="fascinate" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="fascinate" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="fascinate" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="21">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="fascinateinline" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="fascinateinline" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="fascinateinline" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="fascinateinline" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="fascinateinline" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="fascinateinline" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="22">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="monoton" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="monoton" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="monoton" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="monoton" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="monoton" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="monoton" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="23">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="ewert" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="ewert" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="ewert" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="ewert" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="ewert" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="ewert" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="24">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="audiowide" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="audiowide" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="audiowide" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="audiowide" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="audiowide" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="audiowide" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="25">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="spacemono" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="spacemono" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="spacemono" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="spacemono" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="spacemono" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="spacemono" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="26">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="courierprime" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="courierprime" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="courierprime" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="courierprime" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="courierprime" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="courierprime" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="27">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="vt323" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="vt323" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="vt323" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="vt323" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="vt323" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="vt323" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="28">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="creepster" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="creepster" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="creepster" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="creepster" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="creepster" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="creepster" size="32" weight="THIN" color="#ff666666">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    </ListOption>
+    <ListOption id="29">
+    <PartText x="0" y="96" width="450" height="96">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="ribeyemarrow" size="66" weight="BOLD" color="[CONFIGURATION.theme.1]">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="ribeyemarrow" size="48" weight="NORMAL" color="[CONFIGURATION.theme.1]">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="ribeyemarrow" size="32" weight="NORMAL" color="[CONFIGURATION.theme.2]">
+          <Lower>
+            <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
+          </Lower>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="96" width="450" height="96" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="ribeyemarrow" size="66" weight="THIN" color="#ff999999">
+          <Template>%s<Parameter expression="[HOUR_1_12] == 1 ? &quot;One&quot; : ([HOUR_1_12] == 2 ? &quot;Two&quot; : ([HOUR_1_12] == 3 ? &quot;Three&quot; : ([HOUR_1_12] == 4 ? &quot;Four&quot; : ([HOUR_1_12] == 5 ? &quot;Five&quot; : ([HOUR_1_12] == 6 ? &quot;Six&quot; : ([HOUR_1_12] == 7 ? &quot;Seven&quot; : ([HOUR_1_12] == 8 ? &quot;Eight&quot; : ([HOUR_1_12] == 9 ? &quot;Nine&quot; : ([HOUR_1_12] == 10 ? &quot;Ten&quot; : ([HOUR_1_12] == 11 ? &quot;Eleven&quot; : &quot;Twelve&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="188" width="450" height="128" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" maxLines="2">
+        <Font family="ribeyemarrow" size="48" weight="THIN" color="#ff888888">
+          <Template>%s%s<Parameter expression="[MINUTE] == 0 ? &quot;O'Clock&quot; : ([MINUTE] &lt; 10 ? &quot;Oh&quot; : ([MINUTE] &lt; 20 ? ([MINUTE] == 10 ? &quot;Ten&quot; : ([MINUTE] == 11 ? &quot;Eleven&quot; : ([MINUTE] == 12 ? &quot;Twelve&quot; : ([MINUTE] == 13 ? &quot;Thirteen&quot; : ([MINUTE] == 14 ? &quot;Fourteen&quot; : ([MINUTE] == 15 ? &quot;Fifteen&quot; : ([MINUTE] == 16 ? &quot;Sixteen&quot; : ([MINUTE] == 17 ? &quot;Seventeen&quot; : ([MINUTE] == 18 ? &quot;Eighteen&quot; : &quot;Nineteen&quot;))))))))) : ([MINUTE] &lt; 30 ? &quot;Twenty&quot; : ([MINUTE] &lt; 40 ? &quot;Thirty&quot; : ([MINUTE] &lt; 50 ? &quot;Forty&quot; : &quot;Fifty&quot;)))))" /><Parameter expression="[MINUTE] == 0 ? &quot;&quot; : ([MINUTE] &gt;= 10 &amp;&amp; [MINUTE] &lt; 20 ? &quot;&quot; : ([MINUTE] % 10 == 0 ? &quot;&quot; : ([MINUTE] % 10 == 1 ? &quot; One&quot; : ([MINUTE] % 10 == 2 ? &quot; Two&quot; : ([MINUTE] % 10 == 3 ? &quot; Three&quot; : ([MINUTE] % 10 == 4 ? &quot; Four&quot; : ([MINUTE] % 10 == 5 ? &quot; Five&quot; : ([MINUTE] % 10 == 6 ? &quot; Six&quot; : ([MINUTE] % 10 == 7 ? &quot; Seven&quot; : ([MINUTE] % 10 == 8 ? &quot; Eight&quot; : &quot; Nine&quot;))))))))))" /></Template>
+        </Font>
+      </Text>
+    </PartText>
+    <PartText x="0" y="312" width="450" height="46" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER">
+        <Font family="ribeyemarrow" size="32" weight="THIN" color="#ff666666">
           <Lower>
             <Template>%s %d %s<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /><Parameter expression="[MONTH_S]" /></Template>
           </Lower>

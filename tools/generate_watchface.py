@@ -21,6 +21,26 @@ FONTS = [
     ("7", "pirata", "Pirata One (blackletter)"),
     ("8", "cinzeldec", "Cinzel (roman caps)"),
     ("9", "unifraktur", "Unifraktur (blackletter)"),
+    ("10", "lobster", "Lobster (fun script)"),
+    ("11", "gochihand", "Gochi Hand (fun handwritten)"),
+    ("12", "caveatbrush", "Caveat Brush (fun brush)"),
+    ("13", "greatvibes", "Great Vibes (fun script)"),
+    ("14", "shadows", "Shadows Into Light (fun handwritten)"),
+    ("15", "bungee", "Bungee (fun chunky)"),
+    ("16", "alfaslabone", "Alfa Slab (fun chunky)"),
+    ("17", "bowlbyone", "Bowlby One (fun chunky)"),
+    ("18", "chicle", "Chicle (fun rounded)"),
+    ("19", "rye", "Rye (fun western)"),
+    ("20", "fascinate", "Fascinate (fun deco)"),
+    ("21", "fascinateinline", "Fascinate Inline (fun deco)"),
+    ("22", "monoton", "Monoton (fun deco)"),
+    ("23", "ewert", "Ewert (fun woodtype)"),
+    ("24", "audiowide", "Audiowide (fun techy)"),
+    ("25", "spacemono", "Space Mono (fun mono)"),
+    ("26", "courierprime", "Courier Prime (fun typewriter)"),
+    ("27", "vt323", "VT323 (fun pixel)"),
+    ("28", "creepster", "Creepster (fun spooky)"),
+    ("29", "ribeyemarrow", "Ribeye Marrow (fun quirky)"),
 ]
 
 
@@ -83,7 +103,7 @@ def date_block(family, color, weight, ambient_hide):
 def main():
     for e in (HOUR_RAW, TENS_RAW, ONES_RAW):
         assert e.count("(") == e.count(")"), e[:60]
-    assert len(FONTS) == 10
+    assert len(FONTS) == 30
 
     theme_cfg = """    <ColorConfiguration id="theme" displayName="theme_label" defaultValue="0">
       <ColorOption id="0" displayName="theme_dark_label" colors="#ff000000 #ffffffff #ffbbbbbb" />
@@ -171,8 +191,8 @@ def main():
     root = tree.getroot()
     assert root.tag == "WatchFace"
     params = [p.attrib["expression"] for p in root.iter("Parameter")]
-    assert len([p for p in params if "HOUR_1_12" in p]) == 20, len(params)
-    assert len(list(root.iter("ListOption"))) == 20  # 10 config + 10 scene font
+    assert len([p for p in params if "HOUR_1_12" in p]) == 60, len(params)
+    assert len(list(root.iter("ListOption"))) == 60  # 30 config + 30 scene font
     assert len(list(root.iter("BooleanOption"))) == 2  # seconds-dot TRUE/FALSE
     assert not any("COMPLICATION" in p for p in params), "no complication refs"
     assert len(list(root.iter("ComplicationSlot"))) == 0

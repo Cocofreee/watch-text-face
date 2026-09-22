@@ -9,9 +9,13 @@ Repo: `https://github.com/FernandoMiguel/watch-text-face` (private).
   all-caps faces like Bebas render it `TUE 22 SEP`)
 - **Themes**: Dark (light text on black) or Light (dark text on white),
   switchable on the watch / companion editor
-- **10 fonts**: Bebas, Plex Mono, Cardo (classic); Pacifico, Bangers,
+- **30 fonts**: Bebas, Plex Mono, Cardo (classic); Pacifico, Bangers,
   Titan One (fun); MedievalSharp, Pirata One, Cinzel Decorative,
-  Unifraktur (medieval) — switchable the same way
+  Unifraktur (medieval); plus Lobster, Gochi Hand, Caveat Brush,
+  Great Vibes, Shadows Into Light, Bungee, Alfa Slab, Bowlby One, Chicle,
+  Rye, Fascinate, Fascinate Inline, Monoton, Ewert, Audiowide, Space Mono,
+  Courier Prime, VT323, Creepster, Ribeye Marrow (fun, all readable) —
+  switchable the same way
 - **Seconds dot** (toggleable, on by default): jumps 6° per second around
   the edge in interactive mode; hidden in ambient. Note: while enabled,
   the face re-renders every second — turn it off for maximum battery life.
@@ -47,7 +51,7 @@ will not show them).
 watch-text-face/
   watchface/src/main/
     res/raw/watchface.xml        # GENERATED — do not hand-edit
-    res/font/*.ttf               # 10 subsetted OFL fonts (~210 KB total)
+    res/font/*.ttf               # 30 subsetted OFL fonts (~750 KB total)
     res/drawable/preview.png     # picker preview
     res/xml/watch_face_info.xml  # Editable=true, multi-instance allowed
     res/values/strings.xml       # face + theme/font option labels
@@ -70,7 +74,7 @@ gradle :watchface:assembleDebug
 ```
 
 APK verified: `com.fernando.textface`, minSdk/targetSdk 36,
-`hasCode=false`, WFF v4, 10 fonts + 57 KB face XML, ~142 KB total.
+`hasCode=false`, WFF v4, 30 fonts + 167 KB face XML, ~445 KB total.
 
 Check the wording logic without a watch:
 
@@ -84,7 +88,7 @@ python3 tools/verify_time_words.py
 
 1. Get the APK (repo is private, so sign in first):
    ```sh
-   gh release download v1.0.1 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
+   gh release download v1.1.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
    # or download textwords-face-debug.apk from the Releases page in a browser
    ```
 2. Follow steps 1–5 below to connect to the watch, then:
