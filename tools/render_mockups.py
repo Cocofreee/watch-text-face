@@ -1,0 +1,100 @@
+"""Render round-watch mockups of the face using the real bundled fonts.
+
+Run:  python3 tools/render_mockups.py   (needs PIL in this interpreter)
+Writes screenshots/*.png at 466x466 (OPPO Watch X3 resolution).
+"""
+import math
+import os
+from PIL import Image, ImageDraw, ImageFont
+
+W = H = 466
+CX = CY = 233
+S = W / 450.0  # 450-space -> device px
+RES = "watchface/src/main/res/font"
+OUT = "screenshots"
+
+HOUR = "Six"
+MINUTE = "Twenty Eight"
+DATE = "tue 22 sep"
+DOT_R = 210  # orbit radius in device px
+
+
+def font(name, size):
+    return ImageFont.truetype(os.path.join(RES, name + ".ttf"), int(size * S))
+
+
+def draw_centered(d, cx, y, text, fnt, fill):
+    b = d.textbbox((0, 0), text, font=fnt)
+    d.text((cx - (b[2] - b[0]) / 2 - b[0], y), text, font=fnt, fill=fill)
+
+
+def wrap_minute(d, text, fnt, max_w):
+    b = d.textbbox((0, 0), text, font=fnt)
+    if b[2] - b[0] <= max_w:
+        return [text]
+    parts = text.split(" ")
+    best, best_diff = None, None
+    for k in range(1, len(parts)):
+        top = " ".join(parts[:k])
+        w = d.textbbox((0, 0), top, font=fnt)[2]
+        diff = abs(w - max_w / 2)
+        if best_diff is None or diff < best_diff:
+            best, best_diff = k, diff
+    return [" ".join(parts[:best]), " ".join(parts[best:])]
+
+
+def render(theme, fontname, ambient=False, second=28, complication="22"):
+    bg = (0, 0, 0) if (theme == "dark" or ambient) else (255, 255, 255)
+    img = Image.new("RGB", (W, H), (0, 0, 0))
+    d = ImageDraw.Draw(img)
+    if theme == "light" and not ambient:
+        d.ellipse([CX - 233, CY - 233, CX + 233, CY + 233], fill=(255, 255, 255))
+    if ambient:
+        main, sub = (150, 150, 150), (100, 100, 100)
+    elif theme == "dark":
+        main, sub = (255, 255, 255), (187, 187, 187)
+    else:
+        main, sub = (0, 0, 0), (85, 85, 85)
+
+    fh = font(fontname, 60)
+    fm = font(fontname, 44)
+    fd = font(fontname, 30)
+    draw_centered(d, CX, 100 * S, HOUR, fh, main)
+    lines = wrap_minute(d, MINUTE, fm, 400)
+    y = 185 * S
+    for ln in lines:
+        draw_centered(d, CX, y, ln, fm, main)
+        b = d.textbbox((0, 0), ln, font=fm)
+        y += (b[3] - b[1]) + 6
+    draw_centered(d, CX, 300 * S, DATE, fd, sub)
+
+    if not ambient:
+        # seconds dot, 6 degrees per second clockwise from 12
+        a = math.radians(second * 6)
+        dx = CX + DOT_R * math.sin(a)
+        dy = CY - DOT_R * math.cos(a)
+        d.ellipse([dx - 5, dy - 5, dx + 5, dy + 5], fill=main)
+        if complication:
+            fc = font("plexmono", 22) if fontname != "plexmono" else fd
+            draw_centered(d, CX, 362 * S, complication, fc, sub)
+
+    # circular mask -> round watch look
+    mask = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, W, H], fill=255)
+    out = Image.new("RGB", (W, H), (0, 0, 0))
+    out.paste(img, mask=mask)
+    return out
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    render("dark", "bebas").save(f"{OUT}/shot-dark-bebas.png")
+    render("light", "bebas").save(f"{OUT}/shot-light-bebas.png")
+    render("dark", "unifraktur").save(f"{OUT}/shot-dark-unifraktur.png")
+    render("dark", "medieval").save(f"{OUT}/shot-dark-medieval.png")
+    render("dark", "bebas", ambient=True).save(f"{OUT}/shot-ambient.png")
+    print("wrote", sorted(os.listdir(OUT)))
+
+
+if __name__ == "__main__":
+    main()

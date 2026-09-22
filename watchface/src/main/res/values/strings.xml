@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">Text Words</string>
+    <string name="date_slot_label">Date</string>
+    <string name="theme_label">Theme</string>
+    <string name="theme_dark_label">Dark (light text)</string>
+    <string name="theme_light_label">Light (dark text)</string>
+    <string name="font_label">Font</string>
+    <string name="font_bebas_label">Bebas (classic)</string>
+    <string name="font_plexmono_label">Plex Mono (classic)</string>
+    <string name="font_cardo_label">Cardo (classic serif)</string>
+    <string name="font_pacifico_label">Pacifico (fun script)</string>
+    <string name="font_bangers_label">Bangers (fun comic)</string>
+    <string name="font_titanone_label">Titan One (fun chunky)</string>
+    <string name="font_medieval_label">Medieval Sharp</string>
+    <string name="font_pirata_label">Pirata One</string>
+    <string name="font_cinzeldec_label">Cinzel (roman caps)</string>
+    <string name="font_unifraktur_label">Unifraktur (blackletter)</string>
+</resources>

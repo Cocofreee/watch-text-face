@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFaceInfo>
+  <Preview value="@drawable/preview" />
+  <MultipleInstancesAllowed value="true" />
+  <!-- Editable=true: the face exposes one date complication slot. -->
+  <Editable value="true" />
+  <AvailableInRetail value="false" />
+</WatchFaceInfo>

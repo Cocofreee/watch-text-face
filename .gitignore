@@ -1,0 +1,15 @@
+# Gradle / Android build outputs
+.build/
+build/
+watchface/build/
+artifacts/*.apk
+artifacts/*.aab
+# Local SDK location (has your machine-specific path)
+# local.properties is intentionally committed here with the Homebrew SDK path;
+# delete it if you manage the SDK path another way.
+# Gradle wrapper caches
+.gradle/
+# Python venv for font tooling
+.venv/
+# macOS
+.DS_Store
