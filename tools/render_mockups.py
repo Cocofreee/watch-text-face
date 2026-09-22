@@ -56,17 +56,17 @@ def render(theme, fontname, ambient=False, second=28, complication="22"):
     else:
         main, sub = (0, 0, 0), (85, 85, 85)
 
-    fh = font(fontname, 60)
-    fm = font(fontname, 44)
-    fd = font(fontname, 30)
-    draw_centered(d, CX, 100 * S, HOUR, fh, main)
+    fh = font(fontname, 66)
+    fm = font(fontname, 48)
+    fd = font(fontname, 32)
+    draw_centered(d, CX, 96 * S, HOUR, fh, main)
     lines = wrap_minute(d, MINUTE, fm, 400)
-    y = 185 * S
+    y = 188 * S
     for ln in lines:
         draw_centered(d, CX, y, ln, fm, main)
         b = d.textbbox((0, 0), ln, font=fm)
         y += (b[3] - b[1]) + 6
-    draw_centered(d, CX, 300 * S, DATE, fd, sub)
+    draw_centered(d, CX, 312 * S, DATE, fd, sub)
 
     if not ambient:
         # seconds dot, 6 degrees per second clockwise from 12
@@ -74,9 +74,6 @@ def render(theme, fontname, ambient=False, second=28, complication="22"):
         dx = CX + DOT_R * math.sin(a)
         dy = CY - DOT_R * math.cos(a)
         d.ellipse([dx - 5, dy - 5, dx + 5, dy + 5], fill=main)
-        if complication:
-            fc = font("plexmono", 22) if fontname != "plexmono" else fd
-            draw_centered(d, CX, 362 * S, complication, fc, sub)
 
     # circular mask -> round watch look
     mask = Image.new("L", (W, H), 0)

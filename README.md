@@ -7,14 +7,14 @@ Repo: `https://github.com/FernandoMiguel/watch-text-face` (private).
   (`O'Clock` on the hour, `Oh Five` style below 10)
 - Date line — e.g. `tue 22 sep` (lowercased device-locale short names;
   all-caps faces like Bebas render it `TUE 22 SEP`)
-- One editable date complication slot (defaults to system DATE)
 - **Themes**: Dark (light text on black) or Light (dark text on white),
   switchable on the watch / companion editor
 - **10 fonts**: Bebas, Plex Mono, Cardo (classic); Pacifico, Bangers,
   Titan One (fun); MedievalSharp, Pirata One, Cinzel Decorative,
   Unifraktur (medieval) — switchable the same way
-- **Seconds dot**: jumps 6° per second around the edge in interactive
-  mode; hidden in ambient
+- **Seconds dot** (toggleable, on by default): jumps 6° per second around
+  the edge in interactive mode; hidden in ambient. Note: while enabled,
+  the face re-renders every second — turn it off for maximum battery life.
 
 Mockups (PIL approximations with the real bundled fonts — metrics and
 wrapping can differ slightly on-device):
@@ -23,7 +23,7 @@ wrapping can differ slightly on-device):
 - `screenshots/shot-light-bebas.png` — light theme
 - `screenshots/shot-dark-unifraktur.png` — blackletter example
 - `screenshots/shot-dark-medieval.png` — medieval example
-- `screenshots/shot-ambient.png` — ambient (dim, no dot/complication)
+- `screenshots/shot-ambient.png` — ambient (dim, no dot)
 
 ## Can you install 3rd-party faces on the OPPO Watch X3?
 
@@ -70,7 +70,7 @@ gradle :watchface:assembleDebug
 ```
 
 APK verified: `com.fernando.textface`, minSdk/targetSdk 36,
-`hasCode=false`, WFF v4, 10 fonts + 58 KB face XML, ~139 KB total.
+`hasCode=false`, WFF v4, 10 fonts + 57 KB face XML, ~142 KB total.
 
 Check the wording logic without a watch:
 
@@ -84,7 +84,7 @@ python3 tools/verify_time_words.py
 
 1. Get the APK (repo is private, so sign in first):
    ```sh
-   gh release download v1.0.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
+   gh release download v1.0.1 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
    # or download textwords-face-debug.apk from the Releases page in a browser
    ```
 2. Follow steps 1–5 below to connect to the watch, then:
@@ -128,7 +128,7 @@ then install that APK with the `adb install -r` command from Option 1.
    ```
 7. On the watch: long-press the current face → swipe to **Text Words** →
    tap to apply. Tap the gear / Edit (or the companion phone app) to change
-   **Theme**, **Font**, and the date complication.
+   **Theme**, **Font**, and the **Seconds dot** toggle.
 8. Back in Developer options: turn **ADB debugging and Wireless debugging OFF**
    (saves battery).
 
@@ -154,10 +154,13 @@ then install that APK with the `adb install -r` command from Option 1.
 - Fonts subsetted to letters + digits + apostrophe + space
   (1.6 MB → ~210 KB); zero bitmaps (except 2 KB preview), pure black
   background in dark theme / ambient.
-- Ambient: dim thin duplicates on black, dot + complication hidden —
+- Ambient: dim thin duplicates on black, dot hidden —
   text-on-black stays well under the 15%-pixel guideline; memory far under
   the 10 MB ambient / 100 MB interactive budgets. (Light theme is
   interactive-only by design; ambient always renders on black.)
+- Battery: with the seconds dot on, the face redraws every second; with it
+  off, everything re-evaluates at most once per minute. If the watch flags
+  high battery use, turn the dot off first.
 
 ## Customizing
 

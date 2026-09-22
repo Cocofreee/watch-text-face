@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="watch_face_name">Text Words</string>
-    <string name="date_slot_label">Date</string>
     <string name="theme_label">Theme</string>
     <string name="theme_dark_label">Dark (light text)</string>
     <string name="theme_light_label">Light (dark text)</string>
@@ -16,4 +15,5 @@
     <string name="font_pirata_label">Pirata One</string>
     <string name="font_cinzeldec_label">Cinzel (roman caps)</string>
     <string name="font_unifraktur_label">Unifraktur (blackletter)</string>
+    <string name="seconds_dot_label">Seconds dot</string>
 </resources>

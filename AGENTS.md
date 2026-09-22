@@ -33,11 +33,11 @@ clean (`gradle :watchface:assembleDebug --offline`).
 ## Conventions
 
 - WFF v4 only (Wear OS 6 mandate since Jan 2026). No code (`hasCode=false`),
-  no bitmaps except 2 KB preview, system font only for complications.
+  no bitmaps except 2 KB preview, no complication slots.
 - Time/date expressions may use `[HOUR_1_12]` / `[MINUTE]` / `[DAY*]` /
   `[MONTH_S]` only — keeps re-evaluation at once per minute. `[SECOND]` is
   allowed solely for the seconds-dot `Transform`.
-- Ambient: dim duplicates on black, dot + complication hidden (<15% pixels).
+- Ambient: dim duplicates on black, dot hidden (<15% pixels).
 - Colors via `[CONFIGURATION.theme.N]`; fonts via scene-level
   `ListConfiguration` branches (only the selected branch renders).
 - Fonts in `res/font/` must be static TTF/OTF, subsetted to
