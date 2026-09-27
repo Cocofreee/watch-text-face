@@ -36,8 +36,18 @@ All fonts bundled in `watchface/src/main/res/font/` are from
 | vt323.ttf | VT323 | `ofl/vt323/VT323-Regular.ttf` |
 | creepster.ttf | Creepster | `ofl/creepster/Creepster-Regular.ttf` |
 | ribeyemarrow.ttf | Ribeye Marrow | `ofl/ribeyemarrow/RibeyeMarrow-Regular.ttf` |
+| mogra.ttf | Mogra | `ofl/mogra/Mogra-Regular.ttf` |
+| rubikmarkerhatch.ttf | Rubik Marker Hatch | `ofl/rubikmarkerhatch/RubikMarkerHatch-Regular.ttf` |
+| gorditas.ttf | Gorditas | `ofl/gorditas/Gorditas-Regular.ttf` |
+| sonsieone.ttf | Sonsie One | `ofl/sonsieone/SonsieOne-Regular.ttf` |
+| berkshireswash.ttf | Berkshire Swash | `ofl/berkshireswash/BerkshireSwash-Regular.ttf` |
+| racingsansone.ttf | Racing Sans One | `ofl/racingsansone/RacingSansOne-Regular.ttf` |
+| cutivemono.ttf | Cutive Mono | `ofl/cutivemono/CutiveMono-Regular.ttf` |
+| arvo.ttf | Arvo | `ofl/arvo/Arvo-Regular.ttf` |
+| newrocker.ttf | New Rocker | `ofl/newrocker/NewRocker-Regular.ttf` |
+| metalmania.ttf | Metal Mania | `ofl/metalmania/MetalMania-Regular.ttf` |
 
 Each file is subsetted (letters, digits, apostrophe, space only) with
-fontTools to keep the APK small (~750 KB total for 30 fonts). Regenerate via `tools/subset` steps in
+fontTools to keep the APK small (~1 MB total for 40 fonts). Regenerate via `tools/subset` steps in
 README; originals are NOT kept in this repo — re-download from the paths
 above.

@@ -20,7 +20,7 @@ def minute_words(m):
     if m == 0:
         tens = "O'Clock"
     elif m < 10:
-        tens = "Oh"
+        tens = "O"
     elif m < 20:
         tens = TEENS[m]
     elif m < 30:
@@ -56,7 +56,7 @@ def main():
     # spot checks
     checks = {
         (12, 0): "Twelve O'Clock",
-        (1, 1): "One Oh One",
+        (1, 1): "One O One",
         (2, 10): "Two Ten",
         (3, 13): "Three Thirteen",
         (4, 20): "Four Twenty",
@@ -64,7 +64,7 @@ def main():
         (6, 28): "Six Twenty Eight",
         (11, 45): "Eleven Forty Five",
         (12, 59): "Twelve Fifty Nine",
-        (9, 5): "Nine Oh Five",
+        (9, 5): "Nine O Five",
     }
     for (h, m), exp in checks.items():
         got = f"{hour_word(h)} {minute_words(m)}"

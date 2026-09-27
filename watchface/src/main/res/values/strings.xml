@@ -35,5 +35,16 @@
     <string name="font_vt323_label">VT323 (fun pixel)</string>
     <string name="font_creepster_label">Creepster (fun spooky)</string>
     <string name="font_ribeyemarrow_label">Ribeye Marrow (fun quirky)</string>
-    <string name="seconds_dot_label">Seconds dot</string>
+    <string name="font_mogra_label">Mogra (fun display)</string>
+    <string name="font_rubikmarkerhatch_label">Rubik Marker (fun marker)</string>
+    <string name="font_gorditas_label">Gorditas (fun rounded)</string>
+    <string name="font_sonsieone_label">Sonsie One (fun chunky)</string>
+    <string name="font_berkshireswash_label">Berkshire Swash (fun swash)</string>
+    <string name="font_racingsansone_label">Racing Sans (fun speedy)</string>
+    <string name="font_cutivemono_label">Cutive Mono (fun mono)</string>
+    <string name="font_arvo_label">Arvo (classic slab)</string>
+    <string name="font_newrocker_label">New Rocker (fun rock)</string>
+    <string name="font_metalmania_label">Metal Mania (fun metal)</string>
+    <string name="seconds_dot_label">Panda seconds</string>
+    <string name="flip_label">Flip for others</string>
 </resources>

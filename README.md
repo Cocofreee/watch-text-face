@@ -4,21 +4,29 @@ Minimal, battery-optimized Watch Face Format (WFF v4) face.
 Repo: `https://github.com/FernandoMiguel/watch-text-face` (private).
 
 - Time in words, two lines — e.g. `Six` / `Twenty Eight`
-  (`O'Clock` on the hour, `Oh Five` style below 10)
+  (`O'Clock` on the hour, `O Five` style below 10)
 - Date line — e.g. `tue 22 sep` (lowercased device-locale short names;
   all-caps faces like Bebas render it `TUE 22 SEP`)
 - **Themes**: Dark (light text on black) or Light (dark text on white),
   switchable on the watch / companion editor
-- **30 fonts**: Bebas, Plex Mono, Cardo (classic); Pacifico, Bangers,
+- **40 fonts**: Bebas, Plex Mono, Cardo (classic); Pacifico, Bangers,
   Titan One (fun); MedievalSharp, Pirata One, Cinzel Decorative,
-  Unifraktur (medieval); plus Lobster, Gochi Hand, Caveat Brush,
-  Great Vibes, Shadows Into Light, Bungee, Alfa Slab, Bowlby One, Chicle,
-  Rye, Fascinate, Fascinate Inline, Monoton, Ewert, Audiowide, Space Mono,
-  Courier Prime, VT323, Creepster, Ribeye Marrow (fun, all readable) —
-  switchable the same way
-- **Seconds dot** (toggleable, on by default): jumps 6° per second around
-  the edge in interactive mode; hidden in ambient. Note: while enabled,
-  the face re-renders every second — turn it off for maximum battery life.
+  Unifraktur (medieval); Lobster, Gochi Hand, Caveat Brush, Great Vibes,
+  Shadows Into Light, Bungee, Alfa Slab, Bowlby One, Chicle, Rye,
+  Fascinate, Fascinate Inline, Monoton, Ewert, Audiowide, Space Mono,
+  Courier Prime, VT323, Creepster, Ribeye Marrow; Mogra, Rubik Marker,
+  Gorditas, Sonsie One, Berkshire Swash, Racing Sans, Cutive Mono, Arvo,
+  New Rocker, Metal Mania (all readable) — switchable the same way
+- **Panda seconds** (toggleable, on by default): a black-and-white panda
+  orbits the edge, jumping 6° per second; its face changes every quarter
+  hour (classic → wink → happy → sleepy); hidden in ambient. Note: while
+  enabled, the face re-renders every second — turn it off for max battery.
+- **Rainbow hour**: vivid rainbow arc over the top half during the first
+  30 seconds of each hour (interactive mode only).
+- **Flip for others** (toggleable, off by default): rotates the whole face
+  180° so someone facing you can read it. Manual toggle — auto-flip via
+  the accelerometer can't reliably tell "showing to someone" apart from
+  normal wrist angles, so it would flip at the wrong moments.
 
 Mockups (PIL approximations with the real bundled fonts — metrics and
 wrapping can differ slightly on-device):
@@ -27,7 +35,8 @@ wrapping can differ slightly on-device):
 - `screenshots/shot-light-bebas.png` — light theme
 - `screenshots/shot-dark-unifraktur.png` — blackletter example
 - `screenshots/shot-dark-medieval.png` — medieval example
-- `screenshots/shot-ambient.png` — ambient (dim, no dot)
+- `screenshots/shot-ambient.png` — ambient (dim, no panda/rainbow)
+- `screenshots/shot-rainbow.png` — top of the hour (rainbow + `Twelve O'Clock`)
 
 ## Can you install 3rd-party faces on the OPPO Watch X3?
 
@@ -51,7 +60,7 @@ will not show them).
 watch-text-face/
   watchface/src/main/
     res/raw/watchface.xml        # GENERATED — do not hand-edit
-    res/font/*.ttf               # 30 subsetted OFL fonts (~750 KB total)
+    res/font/*.ttf               # 40 subsetted OFL fonts (~1 MB total)
     res/drawable/preview.png     # picker preview
     res/xml/watch_face_info.xml  # Editable=true, multi-instance allowed
     res/values/strings.xml       # face + theme/font option labels
@@ -74,7 +83,7 @@ gradle :watchface:assembleDebug
 ```
 
 APK verified: `com.fernando.textface`, minSdk/targetSdk 36,
-`hasCode=false`, WFF v4, 30 fonts + 167 KB face XML, ~445 KB total.
+`hasCode=false`, WFF v4, 40 fonts + 229 KB face XML, ~654 KB total.
 
 Check the wording logic without a watch:
 
@@ -88,7 +97,7 @@ python3 tools/verify_time_words.py
 
 1. Get the APK (repo is private, so sign in first):
    ```sh
-   gh release download v1.1.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
+   gh release download v1.2.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
    # or download textwords-face-debug.apk from the Releases page in a browser
    ```
 2. Follow steps 1–5 below to connect to the watch, then:
@@ -146,11 +155,16 @@ then install that APK with the `adb install -r` command from Option 1.
   10 options) — each branch renders the same text in a different bundled
   `res/font` family. Only the selected branch renders, so runtime memory
   is unaffected by the option count.
-- Seconds dot: a `Group` pivoted at the face center with
+- Seconds panda: a `Group` pivoted at the face center with
   `<Transform target="angle" value="[SECOND] * 6" />` — integer `[SECOND]`
-  gives discrete jumps, and re-evaluates per second only for that tiny node.
-  A `Variant` hides it in ambient. Time/date expressions still re-evaluate
-  once per minute.
+  gives discrete jumps. Four faces via `Condition` on `[MINUTE]` quarters.
+  A `Variant` hides it in ambient. Renaming the `seconds_dot` config id
+  would orphan existing users' settings — keep the id, change labels only.
+- Rainbow hour: `Condition` on `[MINUTE] == 0 && [SECOND] < 30` wrapping a
+  top-half `Arc` (0° = 12 o'clock, so 270 → 90 clockwise) stroked with a
+  `SweepGradient` (7 vivid colors, `positions=""` = even). Interactive only.
+- Flip for others: whole scene inside a root `Group` (pivot 0.5/0.5) with
+  `<Transform target="angle" value="[CONFIGURATION.flip] == "TRUE" ? 180 : 0" />`.
 
 ## Optimization notes
 

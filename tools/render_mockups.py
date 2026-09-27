@@ -43,7 +43,35 @@ def wrap_minute(d, text, fnt, max_w):
     return [" ".join(parts[:best]), " ".join(parts[best:])]
 
 
-def render(theme, fontname, ambient=False, second=28, complication="22"):
+def draw_panda(d, dx, dy, r):
+    """Mini panda like the WFF shape version: white head/ears with black outline."""
+    ex, ey, er = dx - r - 2, dy - r - 6, 7
+    for exx in (dx - r - 2, dx + r - 4):
+        d.ellipse([exx, ey, exx + 9, ey + 9], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
+    d.ellipse([dx - r, dy - r + 3, dx + r, dy + r + 1], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
+    for exx in (dx - 8, dx + 3):
+        d.ellipse([exx, dy - 5, exx + 5, dy + 2], fill=(0, 0, 0))
+    d.ellipse([dx - 2, dy + 6, dx + 2, dy + 9], fill=(0, 0, 0))
+
+
+RAINBOW = [(255, 0, 0), (255, 128, 0), (255, 255, 0), (0, 255, 0),
+           (0, 255, 255), (0, 0, 255), (255, 0, 255)]
+
+
+def draw_rainbow(d, cx, cy, radius, width=14):
+    import math as _m
+    steps = 90
+    for k in range(steps):
+        a0 = _m.radians(270 + 180 * k / steps)
+        a1 = _m.radians(270 + 180 * (k + 1) / steps)
+        col = RAINBOW[min(6, k * 7 // steps)]
+        d.line([cx + radius * _m.sin(a0), cy - radius * _m.cos(a0),
+                cx + radius * _m.sin(a1), cy - radius * _m.cos(a1)],
+               fill=col, width=width)
+
+
+def render(theme, fontname, ambient=False, second=28, hour="Six",
+           minute="Twenty Eight", panda=True, rainbow=False):
     bg = (0, 0, 0) if (theme == "dark" or ambient) else (255, 255, 255)
     img = Image.new("RGB", (W, H), (0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -59,8 +87,8 @@ def render(theme, fontname, ambient=False, second=28, complication="22"):
     fh = font(fontname, 66)
     fm = font(fontname, 48)
     fd = font(fontname, 32)
-    draw_centered(d, CX, 96 * S, HOUR, fh, main)
-    lines = wrap_minute(d, MINUTE, fm, 400)
+    draw_centered(d, CX, 96 * S, hour, fh, main)
+    lines = wrap_minute(d, minute, fm, 400)
     y = 188 * S
     for ln in lines:
         draw_centered(d, CX, y, ln, fm, main)
@@ -68,12 +96,18 @@ def render(theme, fontname, ambient=False, second=28, complication="22"):
         y += (b[3] - b[1]) + 6
     draw_centered(d, CX, 312 * S, DATE, fd, sub)
 
+    if rainbow and not ambient:
+        draw_rainbow(d, CX, CY, 215)
+
     if not ambient:
-        # seconds dot, 6 degrees per second clockwise from 12
+        # panda seconds marker, 6 degrees per second clockwise from 12
         a = math.radians(second * 6)
         dx = CX + DOT_R * math.sin(a)
         dy = CY - DOT_R * math.cos(a)
-        d.ellipse([dx - 5, dy - 5, dx + 5, dy + 5], fill=main)
+        if panda:
+            draw_panda(d, dx, dy, 15)
+        else:
+            d.ellipse([dx - 5, dy - 5, dx + 5, dy + 5], fill=main)
 
     # circular mask -> round watch look
     mask = Image.new("L", (W, H), 0)
@@ -90,6 +124,8 @@ def main():
     render("dark", "unifraktur").save(f"{OUT}/shot-dark-unifraktur.png")
     render("dark", "medieval").save(f"{OUT}/shot-dark-medieval.png")
     render("dark", "bebas", ambient=True).save(f"{OUT}/shot-ambient.png")
+    render("dark", "bebas", second=10, hour="Twelve", minute="O'Clock",
+           rainbow=True).save(f"{OUT}/shot-rainbow.png")
     print("wrote", sorted(os.listdir(OUT)))
 
 
