@@ -46,5 +46,5 @@
     <string name="font_newrocker_label">New Rocker (fun rock)</string>
     <string name="font_metalmania_label">Metal Mania (fun metal)</string>
     <string name="seconds_dot_label">Panda seconds</string>
-    <string name="flip_label">Flip for others</string>
+    <string name="autoflip_label">Auto flip</string>
 </resources>

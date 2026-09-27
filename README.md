@@ -18,15 +18,18 @@ Repo: `https://github.com/FernandoMiguel/watch-text-face` (private).
   Gorditas, Sonsie One, Berkshire Swash, Racing Sans, Cutive Mono, Arvo,
   New Rocker, Metal Mania (all readable) — switchable the same way
 - **Panda seconds** (toggleable, on by default): a black-and-white panda
-  orbits the edge, jumping 6° per second; its face changes every quarter
-  hour (classic → wink → happy → sleepy); hidden in ambient. Note: while
-  enabled, the face re-renders every second — turn it off for max battery.
+  orbits the edge, jumping 6° per second; the design changes every quarter
+  hour — Scout, Chubby, Shades, Baby (see `screenshots/pandas/`); hidden
+  in ambient. Note: while enabled, the face re-renders every second —
+  turn it off for max battery.
 - **Rainbow hour**: vivid rainbow arc over the top half during the first
   30 seconds of each hour (interactive mode only).
-- **Flip for others** (toggleable, off by default): rotates the whole face
-  180° so someone facing you can read it. Manual toggle — auto-flip via
-  the accelerometer can't reliably tell "showing to someone" apart from
-  normal wrist angles, so it would flip at the wrong moments.
+- **Auto flip** (toggleable, on by default): rotates the whole face 180°
+  when the watch is tilted upside-down-ish (accelerometer Y > 5), so
+  someone facing you can read it. Turn it off if it ever flips when you
+  don't want it to. Battery note: the tilt sensor re-evaluates often, so
+  this costs more than the once-per-minute face — if the watch flags
+  battery use with panda already off, turn this off next.
 
 Mockups (PIL approximations with the real bundled fonts — metrics and
 wrapping can differ slightly on-device):
@@ -37,6 +40,7 @@ wrapping can differ slightly on-device):
 - `screenshots/shot-dark-medieval.png` — medieval example
 - `screenshots/shot-ambient.png` — ambient (dim, no panda/rainbow)
 - `screenshots/shot-rainbow.png` — top of the hour (rainbow + `Twelve O'Clock`)
+- `screenshots/pandas/panda-designs.png` — the 4 panda designs side by side
 
 ## Can you install 3rd-party faces on the OPPO Watch X3?
 
@@ -83,7 +87,7 @@ gradle :watchface:assembleDebug
 ```
 
 APK verified: `com.fernando.textface`, minSdk/targetSdk 36,
-`hasCode=false`, WFF v4, 40 fonts + 229 KB face XML, ~654 KB total.
+`hasCode=false`, WFF v4, 40 fonts + 231 KB face XML, ~662 KB total.
 
 Check the wording logic without a watch:
 
@@ -97,7 +101,7 @@ python3 tools/verify_time_words.py
 
 1. Get the APK (repo is private, so sign in first):
    ```sh
-   gh release download v1.2.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
+   gh release download v1.3.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
    # or download textwords-face-debug.apk from the Releases page in a browser
    ```
 2. Follow steps 1–5 below to connect to the watch, then:
@@ -157,14 +161,18 @@ then install that APK with the `adb install -r` command from Option 1.
   is unaffected by the option count.
 - Seconds panda: a `Group` pivoted at the face center with
   `<Transform target="angle" value="[SECOND] * 6" />` — integer `[SECOND]`
-  gives discrete jumps. Four faces via `Condition` on `[MINUTE]` quarters.
-  A `Variant` hides it in ambient. Renaming the `seconds_dot` config id
-  would orphan existing users' settings — keep the id, change labels only.
+  gives discrete jumps. Four shape-drawn designs via `Condition` on
+  `[MINUTE]` quarters. A `Variant` hides it in ambient. Renaming the
+  `seconds_dot` config id would orphan existing users' settings — keep
+  the id, change labels only.
 - Rainbow hour: `Condition` on `[MINUTE] == 0 && [SECOND] < 30` wrapping a
   top-half `Arc` (0° = 12 o'clock, so 270 → 90 clockwise) stroked with a
   `SweepGradient` (7 vivid colors, `positions=""` = even). Interactive only.
-- Flip for others: whole scene inside a root `Group` (pivot 0.5/0.5) with
-  `<Transform target="angle" value="[CONFIGURATION.flip] == "TRUE" ? 180 : 0" />`.
+- Auto flip: whole scene inside a root `Group` (pivot 0.5/0.5) with
+  `<Transform target="angle" value="(([CONFIGURATION.autoflip] == "TRUE") && ([ACCELEROMETER_Y] > 5)) ? 180 : 0" />`.
+  Sign convention: at rest face-up the sensor reads z ≈ −9.8; arm twisted
+  outward puts gravity toward 12 o'clock (Y positive). If it flips
+  backwards on your wrist, flip the `>` to `<` — one-line change.
 
 ## Optimization notes
 
@@ -190,6 +198,13 @@ then install that APK with the `adb install -r` command from Option 1.
 - Rebuild + reinstall with `-r` after any edit.
 
 ## Troubleshooting
+
+- Can the face update itself from GitHub? No — WFF faces contain zero
+  code and have no network access, so no in-face update button is
+  possible (a `Launch` action can only open another app, not download or
+  install anything — and the repo is private, so the watch couldn't even
+  read it). Updating stays a Mac/phone job: `gh release download` +
+  `adb install -r` per Option 1 above.
 
 - `adb connect` refused / offline: re-check IP+port (pairing port ≠ debug port),
   same Wi-Fi, screen awake, re-pair.

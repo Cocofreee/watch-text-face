@@ -16,7 +16,7 @@ OUT = "screenshots"
 HOUR = "Six"
 MINUTE = "Twenty Eight"
 DATE = "tue 22 sep"
-DOT_R = 210  # orbit radius in device px
+DOT_R = 205  # orbit radius in device px (panda center distance from face center)
 
 
 def font(name, size):
@@ -43,15 +43,19 @@ def wrap_minute(d, text, fnt, max_w):
     return [" ".join(parts[:best]), " ".join(parts[best:])]
 
 
-def draw_panda(d, dx, dy, r):
-    """Mini panda like the WFF shape version: white head/ears with black outline."""
-    ex, ey, er = dx - r - 2, dy - r - 6, 7
-    for exx in (dx - r - 2, dx + r - 4):
-        d.ellipse([exx, ey, exx + 9, ey + 9], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
-    d.ellipse([dx - r, dy - r + 3, dx + r, dy + r + 1], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
-    for exx in (dx - 8, dx + 3):
-        d.ellipse([exx, dy - 5, exx + 5, dy + 2], fill=(0, 0, 0))
-    d.ellipse([dx - 2, dy + 6, dx + 2, dy + 9], fill=(0, 0, 0))
+def draw_panda(d, dx, dy):
+    """Design A (Scout) at 40px, like the WFF version: white head/ears with
+    black outline, grey inner ears, eyes with glints, nose."""
+    bx, by = dx - 20, dy - 20
+    for ex, ey in ((bx + 1, by + 1), (bx + 29, by + 1)):
+        d.ellipse([ex, ey, ex + 10, ey + 10], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
+        d.ellipse([ex + 3, ey + 3, ex + 7, ey + 7], fill=(187, 187, 187))
+    d.ellipse([bx + 5, by + 8, bx + 35, by + 34], fill=(255, 255, 255), outline=(0, 0, 0), width=2)
+    for ex, ey in ((bx + 12, by + 16), (bx + 23, by + 16)):
+        d.ellipse([ex, ey, ex + 5, ey + 7], fill=(0, 0, 0))
+    for ex, ey in ((bx + 14, by + 17), (bx + 25, by + 17)):
+        d.ellipse([ex, ey, ex + 2, ey + 2], fill=(255, 255, 255))
+    d.ellipse([bx + 18, by + 26, bx + 22, by + 29], fill=(0, 0, 0))
 
 
 RAINBOW = [(255, 0, 0), (255, 128, 0), (255, 255, 0), (0, 255, 0),
@@ -105,7 +109,7 @@ def render(theme, fontname, ambient=False, second=28, hour="Six",
         dx = CX + DOT_R * math.sin(a)
         dy = CY - DOT_R * math.cos(a)
         if panda:
-            draw_panda(d, dx, dy, 15)
+            draw_panda(d, dx, dy)
         else:
             d.ellipse([dx - 5, dy - 5, dx + 5, dy + 5], fill=main)
 

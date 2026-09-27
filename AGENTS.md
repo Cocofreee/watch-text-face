@@ -36,8 +36,10 @@ clean (`gradle :watchface:assembleDebug --offline`).
   no bitmaps except 2 KB preview, no complication slots.
 - Time/date expressions may use `[HOUR_1_12]` / `[MINUTE]` / `[DAY*]` /
   `[MONTH_S]` only — keeps re-evaluation at once per minute. `[SECOND]` is
-  allowed solely for the seconds-dot `Transform`.
-- Ambient: dim duplicates on black, dot hidden (<15% pixels).
+  allowed solely for the panda orbit `Transform` + rainbow `Condition`.
+  `ACCELEROMETER_Y` is allowed solely for the auto-flip `Transform`
+  (sensor-rate re-evaluation = real battery cost; say so when asked).
+- Ambient: dim duplicates on black, panda + rainbow hidden (<15% pixels).
 - Colors via `[CONFIGURATION.theme.N]`; fonts via scene-level
   `ListConfiguration` branches (only the selected branch renders).
 - Fonts in `res/font/` must be static TTF/OTF, subsetted to

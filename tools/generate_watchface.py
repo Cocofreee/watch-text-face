@@ -129,51 +129,70 @@ def main():
                    '        displayName="seconds_dot_label"\n'
                    '        screenReaderText="seconds_dot_label"\n'
                    '        defaultValue="TRUE" />')
-    flip_cfg = ('    <BooleanConfiguration id="flip"\n'
-                '        displayName="flip_label"\n'
-                '        screenReaderText="flip_label"\n'
-                '        defaultValue="FALSE" />')
+    flip_cfg = ('    <BooleanConfiguration id="autoflip"\n'
+                '        displayName="autoflip_label"\n'
+                '        screenReaderText="autoflip_label"\n'
+                '        defaultValue="TRUE" />')
 
-    white, black = "#ffffffff", "#ff000000"
+    white, black, grey = "#ffffffff", "#ff000000", "#ffbbbbbb"
 
     def shape_draw(geo):
-        return (f'      <PartDraw x="210" y="0" width="30" height="30">\n'
+        return (f'      <PartDraw x="205" y="0" width="40" height="40">\n'
                 f'        {geo}\n'
                 f'      </PartDraw>')
 
-    def panda_variant(eyes, mouth=""):
-        parts = [
-            # Ears: white fill + black outline (readable on both themes).
-            f'<Ellipse x="0" y="0" width="10" height="10"><Fill color="{white}" /></Ellipse>',
-            f'<Ellipse x="0" y="0" width="10" height="10"><Stroke thickness="2" color="{black}" /></Ellipse>',
-            f'<Ellipse x="20" y="0" width="10" height="10"><Fill color="{white}" /></Ellipse>',
-            f'<Ellipse x="20" y="0" width="10" height="10"><Stroke thickness="2" color="{black}" /></Ellipse>',
-            # Head: white fill + black outline.
-            f'<Ellipse x="3" y="5" width="24" height="22"><Fill color="{white}" /></Ellipse>',
-            f'<Ellipse x="3" y="5" width="24" height="22"><Stroke thickness="2" color="{black}" /></Ellipse>',
-        ] + eyes + ([mouth] if mouth else []) + [
-            f'<Ellipse x="13" y="21" width="4" height="3"><Fill color="{black}" /></Ellipse>',
-        ]
-        return "\n".join(shape_draw(p) for p in parts)
+    def el(x, y, w, h, style):
+        return f'<Ellipse x="{x}" y="{y}" width="{w}" height="{h}">{style}</Ellipse>'
 
-    eye_open_l = f'<Ellipse x="8" y="12" width="5" height="7"><Fill color="{black}" /></Ellipse>'
-    eye_open_r = f'<Ellipse x="17" y="12" width="5" height="7"><Fill color="{black}" /></Ellipse>'
-    panda_classic = panda_variant([eye_open_l, eye_open_r])
-    panda_wink = panda_variant([
-        eye_open_l,
-        f'<Ellipse x="16" y="14" width="8" height="3"><Fill color="{black}" /></Ellipse>',
-    ])
-    panda_happy = panda_variant([
-        f'<Ellipse x="9" y="13" width="4" height="5"><Fill color="{black}" /></Ellipse>',
-        f'<Ellipse x="17" y="13" width="4" height="5"><Fill color="{black}" /></Ellipse>',
-    ], mouth=f'<Arc centerX="15" centerY="20" width="12" height="9" startAngle="90" endAngle="270"><Stroke thickness="2" color="{black}" /></Arc>')
-    panda_sleepy = panda_variant([
-        f'<Ellipse x="7" y="14" width="6" height="3"><Fill color="{black}" /></Ellipse>',
-        f'<Ellipse x="17" y="14" width="6" height="3"><Fill color="{black}" /></Ellipse>',
-    ])
+    def panda_base(head, ears, ear_size=10, inner_ears=True):
+        (hx, hy, hw, hh), ((lax, lay), (rax, ray)) = head, ears
+        parts = []
+        for (ex, ey) in ((lax, lay), (rax, ray)):
+            parts.append(el(ex, ey, ear_size, ear_size, f'<Fill color="{white}" />'))
+            parts.append(el(ex, ey, ear_size, ear_size, f'<Stroke thickness="2" color="{black}" />'))
+            if inner_ears:
+                parts.append(el(ex + 3, ey + 3, ear_size - 6, ear_size - 6, f'<Fill color="{grey}" />'))
+        parts.append(el(hx, hy, hw, hh, f'<Fill color="{white}" />'))
+        parts.append(el(hx, hy, hw, hh, f'<Stroke thickness="2" color="{black}" />'))
+        return parts
 
-    panda_block = f"""    <!-- Panda seconds marker: orbits 6 degrees per second, face changes
-         every quarter hour. Interactive only, toggleable via "Panda seconds". -->
+    def panda_build(base_parts, features):
+        return "\n".join(shape_draw(p) for p in base_parts + features)
+
+    # Design A — Scout: classic + eye glints + inner ears.
+    panda_a = panda_build(
+        panda_base((5, 8, 30, 26), ((1, 1), (29, 1))),
+        [el(12, 16, 5, 7, f'<Fill color="{black}" />'),
+         el(23, 16, 5, 7, f'<Fill color="{black}" />'),
+         el(14, 17, 2, 2, f'<Fill color="{white}" />'),
+         el(25, 17, 2, 2, f'<Fill color="{white}" />'),
+         el(18, 26, 4, 3, f'<Fill color="{black}" />')])
+    # Design B — Chubby: wide head, blush, o mouth.
+    panda_b = panda_build(
+        panda_base((3, 8, 34, 26), ((1, 1), (29, 1))),
+        [el(13, 16, 4, 6, f'<Fill color="{black}" />'),
+         el(23, 16, 4, 6, f'<Fill color="{black}" />'),
+         el(7, 24, 5, 4, f'<Fill color="{grey}" />'),
+         el(28, 24, 5, 4, f'<Fill color="{grey}" />'),
+         el(18, 24, 4, 5, f'<Stroke thickness="2" color="{black}" />')])
+    # Design C — Shades: sunglasses bar + shine.
+    panda_c = panda_build(
+        panda_base((5, 8, 30, 26), ((1, 1), (29, 1)), inner_ears=False),
+        [f'<Rectangle x="8" y="14" width="24" height="9"><Fill color="{black}" /></Rectangle>',
+         f'<Rectangle x="11" y="16" width="4" height="2"><Fill color="{white}" /></Rectangle>',
+         el(18, 26, 4, 3, f'<Fill color="{black}" />')])
+    # Design D — Baby: small ears, huge eyes.
+    panda_d = panda_build(
+        panda_base((5, 8, 30, 26), ((3, 2), (31, 2)), ear_size=6, inner_ears=False),
+        [el(11, 15, 7, 9, f'<Fill color="{black}" />'),
+         el(22, 15, 7, 9, f'<Fill color="{black}" />'),
+         el(13, 16, 2, 2, f'<Fill color="{white}" />'),
+         el(24, 16, 2, 2, f'<Fill color="{white}" />'),
+         el(19, 26, 2, 2, f'<Fill color="{black}" />')])
+
+    panda_block = f"""    <!-- Panda seconds marker: orbits 6 degrees per second, design changes
+         every quarter hour (Scout/Chubby/Shades/Baby). Interactive only,
+         toggleable via "Panda seconds". -->
     <BooleanConfiguration id="seconds_dot">
       <BooleanOption id="TRUE">
         <Group name="panda_orbit" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
@@ -186,16 +205,16 @@ def main():
               <Expression name="q3"><![CDATA[[MINUTE] < 45]]></Expression>
             </Expressions>
             <Compare expression="q1">
-{panda_classic}
+{panda_a}
             </Compare>
             <Compare expression="q2">
-{panda_wink}
+{panda_b}
             </Compare>
             <Compare expression="q3">
-{panda_happy}
+{panda_c}
             </Compare>
             <Default>
-{panda_sleepy}
+{panda_d}
             </Default>
           </Condition>
         </Group>
@@ -221,7 +240,7 @@ def main():
       </Compare>
     </Condition>"""
 
-    flip_expr = esc('[CONFIGURATION.flip] == "TRUE" ? 180 : 0')
+    flip_expr = esc('(([CONFIGURATION.autoflip] == "TRUE") && ([ACCELEROMETER_Y] > 5)) ? 180 : 0')
 
     branches = []
     for i, fam, _ in FONTS:
