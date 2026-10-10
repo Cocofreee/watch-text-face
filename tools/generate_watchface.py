@@ -136,87 +136,72 @@ def main():
 
     white, black, grey = "#ffffffff", "#ff000000", "#ffbbbbbb"
 
-    def shape_draw(geo):
-        return (f'      <PartDraw x="205" y="0" width="40" height="40">\n'
-                f'        {geo}\n'
-                f'      </PartDraw>')
-
     def el(x, y, w, h, style):
         return f'<Ellipse x="{x}" y="{y}" width="{w}" height="{h}">{style}</Ellipse>'
 
-    def panda_base(head, ears, ear_size=10, inner_ears=True):
-        (hx, hy, hw, hh), ((lax, lay), (rax, ray)) = head, ears
-        parts = []
-        for (ex, ey) in ((lax, lay), (rax, ray)):
-            parts.append(el(ex, ey, ear_size, ear_size, f'<Fill color="{white}" />'))
-            parts.append(el(ex, ey, ear_size, ear_size, f'<Stroke thickness="2" color="{black}" />'))
-            if inner_ears:
-                parts.append(el(ex + 3, ey + 3, ear_size - 6, ear_size - 6, f'<Fill color="{grey}" />'))
-        parts.append(el(hx, hy, hw, hh, f'<Fill color="{white}" />'))
-        parts.append(el(hx, hy, hw, hh, f'<Stroke thickness="2" color="{black}" />'))
-        return parts
+    # Climb-test panda: single black-ears design (~108x120 in a 120x130
+    # PartDraw). Stride frames differ only in limb offsets + bob.
+    def panda_stride(frame):
+        lo = 10 if frame == 0 else -10
+        ao = 9 if frame == 0 else -9
+        bob = 0 if frame == 0 else -4
+        e = []
+        for lx in (24 + lo, 68 - lo):
+            e.append(el(lx, 93 + bob, 28, 30, f'<Fill color="{black}" />'))
+            e.append(el(lx, 93 + bob, 28, 30, f'<Stroke thickness="2" color="{white}" />'))
+        for ax, ay in ((6, 61 + ao), (90, 61 - ao)):
+            e.append(el(ax, ay + bob, 24, 32, f'<Fill color="{black}" />'))
+            e.append(el(ax, ay + bob, 24, 32, f'<Stroke thickness="2" color="{white}" />'))
+        e.append(el(22, 53 + bob, 76, 56, f'<Fill color="{white}" />'))
+        e.append(el(22, 53 + bob, 76, 56, f'<Stroke thickness="3" color="{black}" />'))
+        for ex in (14, 84):
+            e.append(el(ex, 3 + bob, 22, 22, f'<Fill color="{black}" />'))
+        e.append(el(22, 17 + bob, 76, 58, f'<Fill color="{white}" />'))
+        e.append(el(22, 17 + bob, 76, 58, f'<Stroke thickness="3" color="{black}" />'))
+        for px in (33, 69):
+            e.append(el(px, 29 + bob, 18, 22, f'<Fill color="{black}" />'))
+        for gx in (38, 74):
+            e.append(el(gx, 32 + bob, 5, 5, f'<Fill color="{white}" />'))
+        e.append(el(54, 55 + bob, 12, 8, f'<Fill color="{black}" />'))
+        e.append(f'<Arc centerX="60" centerY="{60 + bob}" width="24" height="16" startAngle="120" endAngle="240"><Stroke thickness="2" color="{black}" /></Arc>')
+        shapes = "\n".join(f"          {s}" for s in e)
+        return (f'        <PartDraw x="0" y="0" width="120" height="130">\n'
+                f'{shapes}\n'
+                f'        </PartDraw>')
 
-    def panda_build(base_parts, features):
-        return "\n".join(shape_draw(p) for p in base_parts + features)
+    # 15s climb loop expressions (escaped for XML attributes on use).
+    cyc = "([SECOND] % 15)"
+    cyc7 = f"(({cyc}) - 7)"
+    dx_raw = (f"({cyc} <= 7 ? (({cyc} <= 3) ? (({cyc}) * 6.0) : ((7 - ({cyc})) * 6.0)) : "
+              f"(({cyc7} <= 3) ? (({cyc7}) * 6.0) : ((7 - ({cyc7})) * 6.0)))")
+    dy_raw = (f"({cyc} <= 7 ? (0 - (({cyc}) * 245.0 / 7.0)) : "
+              f"((({cyc7}) * 245.0 / 7.0) - 245.0))")
+    ang_raw = f"({cyc} <= 7 ? 0 : (0 - (({cyc7}) * 360.0 / 7.0)))"
+    dx, dy, ang = esc(dx_raw), esc(dy_raw), esc(ang_raw)
 
-    # Design A — Scout: classic + eye glints + inner ears.
-    panda_a = panda_build(
-        panda_base((5, 8, 30, 26), ((1, 1), (29, 1))),
-        [el(12, 16, 5, 7, f'<Fill color="{black}" />'),
-         el(23, 16, 5, 7, f'<Fill color="{black}" />'),
-         el(14, 17, 2, 2, f'<Fill color="{white}" />'),
-         el(25, 17, 2, 2, f'<Fill color="{white}" />'),
-         el(18, 26, 4, 3, f'<Fill color="{black}" />')])
-    # Design B — Chubby: wide head, blush, o mouth.
-    panda_b = panda_build(
-        panda_base((3, 8, 34, 26), ((1, 1), (29, 1))),
-        [el(13, 16, 4, 6, f'<Fill color="{black}" />'),
-         el(23, 16, 4, 6, f'<Fill color="{black}" />'),
-         el(7, 24, 5, 4, f'<Fill color="{grey}" />'),
-         el(28, 24, 5, 4, f'<Fill color="{grey}" />'),
-         el(18, 24, 4, 5, f'<Stroke thickness="2" color="{black}" />')])
-    # Design C — Shades: sunglasses bar + shine.
-    panda_c = panda_build(
-        panda_base((5, 8, 30, 26), ((1, 1), (29, 1)), inner_ears=False),
-        [f'<Rectangle x="8" y="14" width="24" height="9"><Fill color="{black}" /></Rectangle>',
-         f'<Rectangle x="11" y="16" width="4" height="2"><Fill color="{white}" /></Rectangle>',
-         el(18, 26, 4, 3, f'<Fill color="{black}" />')])
-    # Design D — Baby: small ears, huge eyes.
-    panda_d = panda_build(
-        panda_base((5, 8, 30, 26), ((3, 2), (31, 2)), ear_size=6, inner_ears=False),
-        [el(11, 15, 7, 9, f'<Fill color="{black}" />'),
-         el(22, 15, 7, 9, f'<Fill color="{black}" />'),
-         el(13, 16, 2, 2, f'<Fill color="{white}" />'),
-         el(24, 16, 2, 2, f'<Fill color="{white}" />'),
-         el(19, 26, 2, 2, f'<Fill color="{black}" />')])
-
-    panda_block = f"""    <!-- Panda seconds marker: orbits 6 degrees per second, design changes
-         every quarter hour (Scout/Chubby/Shades/Baby). Interactive only,
-         toggleable via "Panda seconds". -->
+    panda_block = f"""    <!-- Panda climb (TEST): 15s loop on the right edge — walks up
+         sec 0-7 with alternating stride, tumbles down sec 8-14.
+         Interactive only, toggleable via "Panda seconds". -->
     <BooleanConfiguration id="seconds_dot">
       <BooleanOption id="TRUE">
-        <Group name="panda_orbit" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
+        <Group name="panda_climb" x="0" y="0" width="450" height="450">
           <Variant mode="AMBIENT" target="alpha" value="0" />
-          <Transform target="angle" value="[SECOND] * 6" />
+          <Transform target="x" value="{dx}" />
+          <Transform target="y" value="{dy}" />
+          <Group name="panda_tumble" x="283" y="319" width="120" height="130" pivotX="0.5" pivotY="0.5">
+            <Transform target="angle" value="{ang}" />
           <Condition>
             <Expressions>
-              <Expression name="q1"><![CDATA[[MINUTE] < 15]]></Expression>
-              <Expression name="q2"><![CDATA[[MINUTE] < 30]]></Expression>
-              <Expression name="q3"><![CDATA[[MINUTE] < 45]]></Expression>
+              <Expression name="stride_even"><![CDATA[[SECOND] % 2 == 0]]></Expression>
             </Expressions>
-            <Compare expression="q1">
-{panda_a}
-            </Compare>
-            <Compare expression="q2">
-{panda_b}
-            </Compare>
-            <Compare expression="q3">
-{panda_c}
+            <Compare expression="stride_even">
+{panda_stride(0)}
             </Compare>
             <Default>
-{panda_d}
+{panda_stride(1)}
             </Default>
           </Condition>
+          </Group>
         </Group>
       </BooleanOption>
       <BooleanOption id="FALSE" />
@@ -310,7 +295,8 @@ def main():
     assert not any("COMPLICATION" in p for p in params), "no complication refs"
     assert len(list(root.iter("ComplicationSlot"))) == 0
     assert root.find(".//SweepGradient") is not None, "rainbow gradient"
-    assert root.find(".//Group[@name='panda_orbit']") is not None, "panda orbit"
+    assert root.find(".//Group[@name='panda_climb']") is not None, "panda climb"
+    assert root.find(".//Group[@name='panda_tumble']") is not None, "panda tumble"
     assert root.find(".//Group[@name='root']") is not None, "flip root"
     fams = {fo.attrib.get("family") for fo in root.iter("Font")}
     for _, fam, _ in FONTS:
