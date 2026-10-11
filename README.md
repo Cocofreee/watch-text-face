@@ -1,7 +1,7 @@
 # Text Words — Wear OS 6 watch face for OPPO Watch X3
 
 Minimal, battery-optimized Watch Face Format (WFF v4) face.
-Repo: `https://github.com/FernandoMiguel/watch-text-face` (private).
+Repo: `https://github.com/Cocofreee/watch-text-face` (private).
 
 - Time in words, two lines — e.g. `Six` / `Twenty Eight`
   (`O'Clock` on the hour, `O Five` style below 10)
@@ -101,7 +101,7 @@ python3 tools/verify_time_words.py
 
 1. Get the APK (repo is private, so sign in first):
    ```sh
-   gh release download v1.3.0 --repo FernandoMiguel/watch-text-face --pattern '*.apk'
+   gh release download v1.3.0 --repo Cocofreee/watch-text-face --pattern '*.apk'
    # or download textwords-face-debug.apk from the Releases page in a browser
    ```
 2. Follow steps 1–5 below to connect to the watch, then:
@@ -214,3 +214,17 @@ then install that APK with the `adb install -r` command from Option 1.
   long-press face → swipe to the end of the list.
 - Wrong hour (12h/24h): the face uses 12-hour words by design
   (`[HOUR_1_12]`); the date follows the device locale.
+
+## License
+
+Copyright (C) 2026 Fernando Miguel
+
+Contact: watch@cocofree.dev
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+See `LICENSE` for the full text.
+SPDX-License-Identifier: AGPL-3.0-or-later

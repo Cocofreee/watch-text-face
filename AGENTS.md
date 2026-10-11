@@ -1,7 +1,7 @@
 # AGENTS.md — watch-text-face
 
 Wear OS 6 (WFF v4) word-clock face for OPPO Watch X3. Repo:
-`https://github.com/FernandoMiguel/watch-text-face` (private).
+`https://github.com/Cocofreee/watch-text-face` (private).
 
 ## Never hand-edit the face
 
@@ -55,6 +55,6 @@ clean (`gradle :watchface:assembleDebug --offline`).
 - Commits as the user (never set `GIT_*` identity vars, never use the bot
   identity here). Push to `main`.
 - Release: `gh release create vX.Y.Z artifacts/textwords-face-debug.apk
-  --repo FernandoMiguel/watch-text-face --title ... --notes ...`.
+  --repo Cocofreee/watch-text-face --title ... --notes ...`.
   Bump `versionCode`/`versionName` in `watchface/build.gradle.kts` first and
   update the `gh release download v...` version in README install steps.
